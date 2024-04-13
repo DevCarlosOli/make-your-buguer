@@ -79,14 +79,15 @@
   ],
   "burguers": [
     {
-      "id": "23",
+      "id": "106c",
       "nome": "Carlos",
       "pao": "3 Queijos",
-      "carne": "Alcatra",
+      "carne": "Picanha",
       "opcionais": [
         "Bacon",
         "Cheddar",
-        "Salame"
+        "Salame",
+        "Tomate"
       ],
       "status": "Solicitado"
     }

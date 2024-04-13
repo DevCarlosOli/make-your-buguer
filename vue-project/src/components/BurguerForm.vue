@@ -31,7 +31,7 @@ export default {
                 nome: this.nome,
                 pao: this.pao,
                 carne: this.carne,
-                opcioniais: Array.from(this.opcionais),
+                opcionais: Array.from(this.opcionais),
                 status: "Solicitado"
             }
 
