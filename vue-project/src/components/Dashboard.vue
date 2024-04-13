@@ -11,12 +11,15 @@ export default {
     methods: {
         async getPedidos() {
             const req = await fetch("http://localhost:3000/burguers");
-
             const data = await req.json();
-
             this.burguers = data;
-
             console.log(data);
+            this.getStatus();
+        },
+        async getStatus() {            
+            const req = await fetch("http://localhost:3000/status");
+            const data = await req.json();
+            this.status = data;
         }
     },
     mounted() {
@@ -50,6 +53,7 @@ export default {
                     <div>
                         <select name="status" class="status">
                             <option value="">Selecione</option>
+                            <option v-for="s in status" :key="s.id" value="s.tipo" :selected="burguer.status == s.tipo">{{ s.tipo }}</option>
                         </select>
                         <button class="deletar-btn">Cancelar</button>
                     </div>
@@ -104,8 +108,8 @@ export default {
         color: #FCBA03;
         font-weight: bold;
         border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
+        padding: 8px;
+        font-size: 12px;
         margin: 0 auto;
         cursor: pointer;
         transition: 0.5s;
