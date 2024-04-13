@@ -1,6 +1,27 @@
 <script>
 export default {
-    name: "Dashboard"
+    name: "Dashboard",
+    data() {
+        return {
+            burguers: null,
+            burguer_id: null,
+            status: []
+        }
+    },
+    methods: {
+        async getPedidos() {
+            const req = await fetch("http://localhost:3000/burguers");
+
+            const data = await req.json();
+
+            this.burguers = data;
+
+            console.log(data);
+        }
+    },
+    mounted() {
+        this.getPedidos();
+    }
 }
 </script>
 
@@ -16,15 +37,14 @@ export default {
                 <div>Ações:</div>
             </div>
             <div id="burguer-table-rows">
-                <div class="burguer-table-row">
-                    <div class="order-number">1</div>
-                    <div>João</div>
-                    <div>Pão de Trigo</div>
-                    <div>Maminha</div>
+                <div class="burguer-table-row" v-for="burguer in burguers" :key="burguer.id">
+                    <div class="order-number">{{ burguer.id }}</div>
+                    <div>{{ burguer.nome }}</div>
+                    <div>{{ burguer.pao }}</div>
+                    <div>{{ burguer.carne }}</div>
                     <div>
                         <ul>
-                            <li>Salame</li>
-                            <li>Tomate</li>
+                            <li v-for="(opcional, index) in burguer.opcionais" :key="index">{{ opcional }}</li>
                         </ul>
                     </div>
                     <div>

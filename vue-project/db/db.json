@@ -79,22 +79,15 @@
   ],
   "burguers": [
     {
-      "id": "a064",
+      "id": "23",
       "nome": "Carlos",
-      "pao": "Integral",
-      "carne": "Maminha",
-      "opcioniais": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "f53c",
-      "nome": "Aline",
-      "pao": "Italiano Branco",
+      "pao": "3 Queijos",
       "carne": "Alcatra",
-      "opcioniais": [],
+      "opcionais": [
+        "Bacon",
+        "Cheddar",
+        "Salame"
+      ],
       "status": "Solicitado"
     }
   ]
