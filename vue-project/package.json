@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "backend": "npx json-server --watch vue-project/db/db.json"
+    "backend": "npx json-server --watch db/db.json"
   },
   "dependencies": {
     "vue": "^3.4.21",
