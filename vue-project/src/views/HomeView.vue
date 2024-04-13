@@ -1,10 +1,12 @@
 <script>
   import Banner from '../components/Banner.vue';
+  import BurguerForm from '../components/BurguerForm.vue';
 
   export default{
     name: "HomeView",
     components:{
-      Banner
+      Banner,
+      BurguerForm
     }
   }
 </script>
@@ -13,6 +15,6 @@
   <Banner />
   <div class="main-container">
     <h1>Monte o seu burguer:</h1>
-    <p>Formulário</p>
+    <BurguerForm />
   </div>
 </template>
