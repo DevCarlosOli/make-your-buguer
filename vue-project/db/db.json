@@ -79,17 +79,16 @@
   ],
   "burguers": [
     {
-      "id": "106c",
+      "id": "93bd",
       "nome": "Carlos",
       "pao": "3 Queijos",
       "carne": "Picanha",
       "opcionais": [
         "Bacon",
-        "Cheddar",
         "Salame",
-        "Tomate"
+        "Pepino"
       ],
-      "status": "Solicitado"
+      "status": "Em produção"
     }
   ]
 }

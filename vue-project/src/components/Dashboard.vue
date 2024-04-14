@@ -1,12 +1,18 @@
 <script>
+import Message from './Message.vue';
+
 export default {
     name: "Dashboard",
     data() {
         return {
             burguers: null,
             burguer_id: null,
-            status: []
+            status: [],
+            msg: null
         }
+    },
+    components: {
+        Message
     },
     methods: {
         async getPedidos() {
@@ -28,6 +34,10 @@ export default {
             
             const res = req.json();
 
+            this.msg = `Pedido removido com sucesso!`;
+
+            setTimeout(() => this.msg = "", 3000);
+
             this.getPedidos();
         },
         async updateBurguer(event, id) {
@@ -42,6 +52,10 @@ export default {
             });
 
             const res = await req.json();
+
+            this.msg = `Pedido Nº ${res.id} atualizado para ${res.status}.`;
+
+            setTimeout(() => this.msg = "", 3000);
         }
     },
     mounted() {
@@ -52,6 +66,7 @@ export default {
 
 <template>
     <div id="burguer-table">
+        <Message :msg="msg" v-show="msg" />
         <div>
             <div id="burguer-table-heading">
                 <div class="order-id">#:</div>
